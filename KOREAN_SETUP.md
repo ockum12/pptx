@@ -81,20 +81,18 @@ After installation, the following Korean fonts will be available:
 
 ## Using Korean Fonts in python-pptx
 
-### Default Configuration
+### Font Substitution for Raspberry Pi
 
-The `create_talktale_ppt.py` script uses '맑은 고딕' (Malgun Gothic), which is a Windows font and may not be available on Raspberry Pi.
-
-### Recommended Font Substitution
-
-For best compatibility on Raspberry Pi, modify the script to use NanumGothic:
+Many Python scripts and applications use Windows-specific Korean fonts like '맑은 고딕' (Malgun Gothic) or '돋움' (Dotum), which are not available on Raspberry Pi. Replace these with NanumGothic for compatibility:
 
 ```python
-# Original (Windows)
-p.font.name = '맑은 고딕'
+# Windows fonts (not available on Raspberry Pi)
+p.font.name = '맑은 고딕'  # Malgun Gothic
+p.font.name = '돋움'       # Dotum
 
 # Recommended for Raspberry Pi
-p.font.name = 'NanumGothic'
+p.font.name = 'NanumGothic'  # Modern sans-serif
+p.font.name = 'NanumMyeongjo'  # Serif font
 ```
 
 ### Font Usage Example
